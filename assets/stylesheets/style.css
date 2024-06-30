@@ -1,0 +1,209 @@
+/* Header */
+
+.primary-header {
+    font-family: "Montserrat Alternates", serif;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 0px 10px #000;
+    z-index: 100;
+}
+
+/*Навигация*/
+.primary-nav {
+    display:flex;
+    align-items: center;
+}
+
+.primary-nav .row {
+    width: 100%;
+}
+
+
+/*Ссылки */
+.primary-header a {
+    color: #000;
+    text-decoration: none;
+}
+
+.primary-header .logo {
+    font-size: 28px;
+}
+
+.preview {
+   
+    position: relative;
+    padding: 0;
+    z-index: 1;
+    
+
+}
+
+.preview video {
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    padding: 0;
+    object-fit: cover;
+}
+
+.preview .preview-wrapper {
+    font-family: "Montserrat Alternates", "Bona Nova", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.preview-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 3;   
+}
+
+.preview-element p {
+    width: 60%;
+    font-size: 28px;
+    color: #FFF;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.preview-element .overview-btn a {
+    position: relative;
+    z-index: 3;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+}
+
+.preview-element .overview-btn {
+    position: relative;
+    font-family: "Bona Nova", sans-serif;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 72px;
+    border: #FFF solid 2px;
+    overflow: hidden;
+}
+
+
+.preview-element .overview-btn .overview-btn-wrapper {
+    position: absolute;
+    width: 276px;
+    height: 68px;
+    left: -276px;
+    background-color: #FFF;
+    z-index: 2;
+    transition: 1s
+}
+
+.preview-element .overview-btn:hover .overview-btn-wrapper {
+    left: 0;
+    transition: 1s;
+}
+
+.preview-element .overview-btn:hover a {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 991px) {
+    .primary-header .logo  {
+        
+    }
+
+    .preview-element p {
+        font-size: 22px;
+    }
+
+    .preview-element .overview-btn {
+        width: 240px;
+        height: 62px;
+        font-size: 28px
+    }
+
+    .preview-element .overview-btn .overview-btn-wrapper {
+        width: 236px;
+        height: 58px;
+        left: -236px;
+    }
+
+
+}
+
+
+@media (max-width: 767px) {
+    .primary-header .logo  {
+        font-size: 24px;
+    }
+    .preview-element p {
+        font-size: 18px;
+    }
+
+    .preview-element .overview-btn {
+        width: 200px;
+        height: 52px;
+        font-size: 24px;
+    }
+
+    .preview-element .overview-btn .overview-btn-wrapper {
+        width: 196px;
+        height: 48px;
+        left: -196px;
+    }
+}
+
+@media (max-width: 575px) {
+    .preview-element p {
+        font-size: 14px;
+    }
+
+    .preview-element .overview-btn {
+        width: 160px;
+        height: 42px;
+        font-size: 20px;
+    }
+
+    .preview-element .overview-btn .overview-btn-wrapper {
+        width: 156px;
+        height: 38px;
+        left: -156px;
+    }
+}
+
+@media (max-width: 407px) {
+    .preview-element p {
+        font-size: 12px;
+        width: 80%;
+    }
+
+    .preview-element .overview-btn {
+        width: 140px;
+        height: 37px;
+        font-size: 18px;
+    }
+
+    .preview-element .overview-btn .overview-btn-wrapper {
+        width: 136px;
+        height: 35px;
+        left: -136px;
+    }
+}
+
+
+
+
+
