@@ -1,27 +1,27 @@
 body {
- 
+ overflow: hidden;
 }
 
 @keyframes slidein {
     from {
-      translate: 150vw 0;
+      left: 150vw;
     }
   
     to {
-      translate: 0 0;
+      left: 0;
     }
   }
 
 @keyframes slideout {
     from {
-        translate: 0 0;
+        left: 0;
         opacity: 1;
         display: block;
         
     }
   
     to {
-        translate: 150vw 0;
+        left: 150vw;
         opacity: 1;
         display: block;
 
@@ -52,9 +52,7 @@ body {
     display: none;
     position: absolute;
     opacity: 0;
-    z-index: 9;
-    overflow: hidden;
-    
+    z-index: 9; 
 }
 
 .modal-window {
