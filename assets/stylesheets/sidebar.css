@@ -1,7 +1,3 @@
-body {
- overflow: hidden;
-}
-
 @keyframes slidein {
     from {
       left: 150vw;
