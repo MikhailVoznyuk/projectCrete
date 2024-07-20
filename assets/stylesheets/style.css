@@ -8,10 +8,14 @@
 .primary-header {
     font-family: "Montserrat Alternates", serif;
     position: relative;
-    color: #000;
+    color: #fff;
     padding: 20px;
     box-shadow: 0 0px 10px #000;
     z-index: 100;
+}
+
+.primary-header.primary-header-main {
+    box-shadow: 0 0 0;
 }
 
 .side-nav {
@@ -76,6 +80,10 @@
     transition: 0.6s ease-in-out;
 }
 
+.primary-header-main .primary-nav a span {
+    background-color: #fff;
+}
+
 .primary-nav a.current span {
     left: 0;
     width: 100%;
@@ -109,6 +117,14 @@
     text-align: center;
 }
 
+.primary-header-main a {
+    color: #fff;
+}
+
+.primary-header-main .logo {
+    color: #fff;
+}
+
 /* Контейнеры */
 
 .content-center {
@@ -127,6 +143,12 @@
     margin-bottom: 97px;
 }
 
+.space-cover-fluid {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    margin-bottom: -112px;
+}
 
 .text-article {
     display: flex; 
@@ -345,10 +367,15 @@
 .features li:first-child {
     list-style-type: none;
 }
+.preview {
+    position: absolute;
+    top: 0;
+}
 .preview video {
     display: block;
     position: relative;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     z-index: 1;
     padding: 0;
     object-fit: cover;
