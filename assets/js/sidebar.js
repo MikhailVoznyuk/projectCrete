@@ -13,8 +13,6 @@ button.addEventListener( 'click', () => {
             header.classList.add("primary-header-main");
         }
     } else {
-
-        console.log(0);
         canvas.classList.remove("hide");
         canvas.classList.add('show');
         if (header) {
