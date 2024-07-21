@@ -11,11 +11,15 @@
     color: #fff;
     padding: 20px;
     box-shadow: 0 0px 10px #000;
+    background-color: #fff;
     z-index: 100;
+    transition: 1s;
 }
 
 .primary-header.primary-header-main {
     box-shadow: 0 0 0;
+    background: none;
+    transition: 1s
 }
 
 .side-nav {
@@ -379,6 +383,7 @@
     z-index: 1;
     padding: 0;
     object-fit: cover;
+    pointer-events: none;
 }
 
 .preview .preview-wrapper {
