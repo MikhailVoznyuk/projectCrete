@@ -347,13 +347,17 @@
     max-width: 80%;
 }
 
-.loc-map .text-field {
-    margin-bottom: 20px;
-}
+
 .loc-map p {
     font-family: "Montserrat Alternates", sans-serif;
     font-size: 24px; 
     text-align: center;
+    margin-bottom: 40px;
+   
+}
+
+.loc-map img {
+    width: 100%;
 }
 
 .features {
@@ -607,92 +611,6 @@
     transition: 1s ease-in-out;
 }
 
-
-
-@media (max-width: 991px) {
-    .primary-header .logo  {
-        
-    }
-
-    .preview-element p {
-        font-size: 22px;
-    }
-
-    .preview-element .overview-btn {
-        width: 240px;
-        height: 62px;
-        font-size: 28px
-    }
-
-    .preview-element .overview-btn .overview-btn-wrapper {
-        width: 236px;
-        height: 58px;
-        left: -236px;
-    }
-
-
-}
-
-
-@media (max-width: 767px) {
-    .primary-header .logo  {
-        font-size: 24px;
-    }
-    .preview-element p {
-        font-size: 18px;
-    }
-
-    .preview-element .overview-btn {
-        width: 200px;
-        height: 52px;
-        font-size: 24px;
-    }
-
-    .preview-element .overview-btn .overview-btn-wrapper {
-        width: 196px;
-        height: 48px;
-        left: -196px;
-    }
-}
-
-@media (max-width: 575px) {
-    .preview-element p {
-        font-size: 14px;
-    }
-
-    .preview-element .overview-btn {
-        width: 160px;
-        height: 42px;
-        font-size: 20px;
-    }
-
-    .preview-element .overview-btn .overview-btn-wrapper {
-        width: 156px;
-        height: 38px;
-        left: -156px;
-    }
-}
-
-@media (max-width: 407px) {
-    .preview-element p {
-        font-size: 24px;
-        width: 80%;
-    }
-
-    .preview-element .overview-btn {
-        margin-top: 40px;
-        width: 200px;
-        height: 52px;
-        font-size: 24px;
-    }
-
-    .preview-element .overview-btn .overview-btn-wrapper {
-        width: 196px;
-        height: 48px;
-        left: -196px;
-    }
-}
-
 .animation {
     position: relative;
     opacity: 0;
@@ -740,3 +658,98 @@
 #gallery-location a {
     width: 49%;
 }
+
+
+
+@media (max-width: 991px) {
+    .primary-header .logo  {
+        
+    }
+
+    .preview-element p {
+        font-size: 22px;
+    }
+
+    .preview-element .overview-btn {
+        width: 240px;
+        height: 62px;
+        font-size: 28px
+    }
+
+    .preview-element .overview-btn .overview-btn-wrapper {
+        width: 236px;
+        height: 58px;
+        left: -236px;
+    }
+
+    .features {
+        padding-left: 0;
+    }
+    .features li {
+        margin-right: 20px;
+        font-size: 16px;
+        padding-left: 0;
+    }
+
+
+}
+
+
+@media (max-width: 767px) {
+    .primary-header .logo  {
+        font-size: 24px;
+    }
+    .preview-element p {
+        font-size: 18px;
+    }
+
+    .preview-element .overview-btn {
+        width: 200px;
+        height: 52px;
+        font-size: 24px;
+    }
+
+    .preview-element .overview-btn .overview-btn-wrapper {
+        width: 196px;
+        height: 48px;
+        left: -196px;
+    }
+}
+
+@media (max-width: 575px) {
+    .preview-element p {
+        font-size: 24px;
+        width: 80%;
+        margin-top: 50px;
+    }
+
+    .preview-element .overview-btn {
+        margin-top: 40px;
+        width: 200px;
+        height: 52px;
+        font-size: 24px;
+    }
+
+    .preview-element .overview-btn .overview-btn-wrapper {
+        width: 196px;
+        height: 48px;
+        left: -196px;
+    }
+    
+    #gallery-main  .header-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 407px) {
+    
+
+    .features li {
+        font-size: 14px;
+    }
+
+    .loc-map  img {
+       width: 100%;
+    }
+}
+
