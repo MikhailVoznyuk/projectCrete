@@ -37,7 +37,7 @@
 
 
 
-.modal-wrapper {
+.side-bar .modal-wrapper {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -51,7 +51,7 @@
     z-index: 9; 
 }
 
-.modal-window {
+.side-bar .modal-window {
     position: absolute;
     background-color: #fff;
     width: 100vw;

@@ -6,6 +6,7 @@
 /* Header */
 
 .primary-header {
+    position: relative;
     font-family: "Montserrat Alternates", serif;
     position: relative;
     color: #fff;
@@ -14,6 +15,7 @@
     background-color: #fff;
     z-index: 100;
     transition: 1s;
+    z-index: 3;
 }
 
 .primary-header.primary-header-main {
@@ -112,10 +114,22 @@
     text-decoration: none;
 }
 
-.primary-header .logo {
-    color: #000;
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    
     font-size: 28px;
+    line-height: 34px;
 }
+
+.primary-header .logo-container img {
+   
+    width: 100px;
+    margin-right: 14px;
+}
+
 
 .primary-nav a {
     text-align: center;
@@ -125,10 +139,61 @@
     color: #fff;
 }
 
-.primary-header-main .logo {
+.primary-header .logo-container {
+    color: #000;
+}
+
+.primary-header-main .logo-container {
     color: #fff;
 }
 
+/*Кнопки */ 
+
+.overview-open-btn {
+    position: relative;
+    width: 180px;
+    height: 30px;
+    top: -80px;
+    left: 25px;
+    background-color: yellow;
+    text-transform: uppercase;
+    font-family: "Bona Nova", serif;
+    border-radius: 0px;
+    background-color: #fff;
+    border-radius: 5px;
+    color:#696969;
+    margin-bottom: -30px;
+
+}
+
+.overview-open-btn .row-span{
+    width: calc(100% - 6px);
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    
+    left: 0;
+    margin: 3px;
+}
+
+.overview-open-btn .row-span.row-span-top {
+    top: 0;
+}
+
+.overview-open-btn .row-span.row-span-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+
+.overview-open-btn .row-span span {
+    
+    background-color: #696969;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
 /* Контейнеры */
 
 .content-center {
@@ -138,9 +203,13 @@
 } 
 
 .preview {
-    position: relative;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: end;
     padding: 0;
-    z-index: 1;
+    z-index: 2;
+    height: 100vh;
 }
 
 .object-preview {
@@ -149,9 +218,10 @@
 
 .space-cover-fluid {
     position: relative;
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
-    margin-bottom: -112px;
+    margin-bottom: -144px;
+    
 }
 
 .text-article {
@@ -160,7 +230,7 @@
     font-family: "Montserrat Alternates", serif;
     justify-content: center;
     text-align: center;
-    margin: 50px 0;
+    margin: 0 0 50px 0;
 }
 
 .text-article-under {
@@ -290,6 +360,18 @@
     width: 100%;
 }
 
+.modal-container img {
+    position: absolute;
+    height: 80%;;
+    right: 0;
+    bottom: 0;
+    margin-right: 5%;
+    z-index: 5;
+    opacity: 0.2;
+}
+
+
+/*Элементы*/
 
 
 /* Списки */
@@ -375,19 +457,26 @@
 .features li:first-child {
     list-style-type: none;
 }
-.preview {
-    position: absolute;
-    top: 0;
-}
+
 .preview video {
     display: block;
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     z-index: 1;
     padding: 0;
     object-fit: cover;
     pointer-events: none;
+    
+}
+
+.preview-background {
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
 }
 
 .preview .preview-wrapper {
@@ -396,11 +485,8 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 2;
+    height: calc(100vh - 112px);
 }
 
 .preview-element {
@@ -409,7 +495,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 3;   
+    z-index: 3; 
 }
 
 .preview-element p {
@@ -420,7 +506,7 @@
     margin-bottom: 5%;
 }
 
-.preview-element .overview-btn a {
+.preview-element .overview-btn span {
     position: relative;
     z-index: 3;
     color: #FFF;
@@ -456,9 +542,8 @@
     transition: 1s;
 }
 
-.preview-element .overview-btn:hover a {
+.preview-element .overview-btn:hover span {
     color: #000;
-    text-decoration: underline;
 }
 
 
@@ -529,7 +614,8 @@
     position: relative;
     width: 200px;
     height: 50px;
-    border: 2px #27CDC0 solid;
+    border: 2px #A38A51 solid;
+    margin-bottom: 50px;
 }
 
 .book-btn a {
@@ -541,7 +627,7 @@
     height: 100%;
     font-family: "Bona Nova", serif;
     font-size: 24px;
-    color: #27CDC0;
+    color: #A38A51;
     text-decoration: none;
     z-index: 3;
 }
@@ -551,7 +637,7 @@
     width: 0;
     height: 100%;
     left: 50%;
-    background-color: #27CDC0;
+    background-color: #A38A51;
     z-index: 2;
     transition: 0.5s;
 }
@@ -572,6 +658,72 @@
     color: #696969;
 }
 
+/* Формы */
+
+.modal-container form {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    z-index: 6;
+}
+
+.modal-container .datepicker {
+    max-width: 200px;
+}
+.modal-row {
+    margin-left: 20px;
+}
+
+.modal-container button {
+    margin-top: 40px;
+}
+
+.self-modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.self-modal-header h3 {
+    
+    margin-top: 5px;
+}
+
+.self-modal-header .close-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.self-modal-header .close-btn span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    background-color: #000;
+    border-radius: 20px;
+    width: 100%;
+    height: 3px;
+    transform: rotate(45deg);
+   
+}
+
+.self-modal-header .close-btn span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.self-modal-header .close-btn span:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+.modal-form-row {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+}
+
+.modal-container button {
+    width: 100px;
+}
 
 /* Скрипты */
 
@@ -659,6 +811,72 @@
     width: 49%;
 }
 
+.modal-opened {
+    overflow-y: hidden;
+}
+
+
+.modal {
+    position: fixed;
+    display: none;
+}
+
+.modal-container {
+    position: relative;
+    background-color: #fff;
+    top: 10vh;
+    left: 10vw;
+    width: 80vw;
+    height: 80vh;
+    z-index: 5;
+    padding: 2px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.self-modal-wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+}
+
+.modal-show {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-container-sep {
+    position: relative;
+    height: 4px;
+    width: 100%;
+    z-index: 6;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.modal-container-sep span {
+    position: relative;
+    display: block;
+    z-index: 10;
+    width: 20%;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #000;
+}
+
+.modal-container button {
+    font-family: "Bona Nova", serif;
+    text-transform: uppercase;
+    background-color: 		#d4af37;
+    border: 2px solid #A38A51;
+    border-radius: 5px;
+    width: 160px;
+    height: 40px;
+
+}
+
 
 
 @media (max-width: 991px) {
@@ -696,11 +914,16 @@
 
 
 @media (max-width: 767px) {
-    .primary-header .logo  {
+    .primary-header .logo-container  {
         font-size: 24px;
+        line-height: 32px;
+
+    }
+    .primary-header .logo-container img {
+        width: 80px
     }
     .preview-element p {
-        font-size: 18px;
+        font-size: 3vh;
     }
 
     .preview-element .overview-btn {
@@ -714,13 +937,16 @@
         height: 48px;
         left: -196px;
     }
+
+    .space-cover-fluid {
+        margin-bottom: -132px;
+    }
 }
 
 @media (max-width: 575px) {
     .preview-element p {
-        font-size: 24px;
+        font-size: 2.9vh;
         width: 80%;
-        margin-top: 50px;
     }
 
     .preview-element .overview-btn {
@@ -742,7 +968,19 @@
 }
 
 @media (max-width: 407px) {
-    
+    .primary-header .logo-container  {
+        font-size: 20px;
+        line-height: 26px;
+
+    }
+    .primary-header .logo-container img {
+        width: 60px
+    }
+
+    .preview-element p {
+        font-size: 2.8vh;
+        width: 80%;
+    }
 
     .features li {
         font-size: 14px;

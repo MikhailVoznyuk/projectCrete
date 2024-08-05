@@ -16,6 +16,10 @@
         <link rel="stylesheet" href="assets/stylesheets/glide.theme.css">
         <link rel="stylesheet" href="assets/stylesheets/sidebar.css">
         <link rel="stylesheet" href="assets/stylesheets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/@easepick/datetime@1.2.1/dist/index.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@easepick/core@1.2.1/dist/index.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@easepick/base-plugin@1.2.1/dist/index.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@easepick/range-plugin@1.2.1/dist/index.umd.min.js"></script>
 
         
     </head>
@@ -24,11 +28,13 @@
             <header class="primary-header primary-header-main">
                 <section class="container-fluid">
                     <section class="row justify-content-between">
-                        <a class="col-2 logo" href="index.html">
-                            Crete<br>Vacations
+                        <a href="index.html" class="col-4 logo-container">
+                            <img src="assets/media/logo_light.png" class="logo-image">
+                            <span>Crete<br>Vacations</span>
                         </a>
+                        
                     
-                        <section class="col-9 primary-nav">
+                        <section class="col-8 primary-nav">
                             <div class="row justify-content-end">
                                 <a class="col-auto d-none d-md-block" href="object1.html">
                                     Magnolia Residence
@@ -72,17 +78,18 @@
             </section>
             <main>
                 <section class="preview">
-                    <video autoplay loop muted poster="assets/media/preview_image.png">
+                    <video autoplay loop muted playsinline poster="assets/media/preview_image.png">
                         <source src="assets/media/preview_video.mp4">
                     </video>
+                    <div class="preview-background"></div>
                     <article class="preview-wrapper">
                         <section class="preview-element">
                             <p>
-                                In our Iconic Collection, we bring together our most emblematic houses, the ones that have completely stolen our hearts, and that are, for the most part, available exclusively in our collection.
+                                Find the perfect location for your stay in Crete. In our luxury villas you can spend an unforgettable holiday, enjoying stunning sea views directly from the villa and pool,  while at the same time being within walking distance of Blue flag beaches, restaurants, taverns and bars.
                             </p>
                             <div class="overview-btn">
                                 <div class="overview-btn-wrapper"></div>
-                                <a href="#objects-overview">BOOK NOW</a>
+                                <span id="modal-button-book">BOOK NOW</span>
                             </div>
                             
                         </section>
@@ -101,20 +108,20 @@
                                     <div class="glide__track" data-glide-el="track">
                                     <ul class="glide__slides">
                                         <li class="glide__slide">
-                                            <img src="assets/media/magnolia/photo3.jpeg">
+                                            <img src="assets/media/magnolia/photo0.jpeg">
                                         </li>
                                         <li class="glide__silde">
-                                            <img src="assets/media/magnolia/WhatsApp Image 2024-07-16 at 12.19.11.jpeg">
+                                            <img src="assets/media/magnolia/photo2.jpeg">
                                         </li>
                                         <li class="glide__slide">
-                                            <img src="assets/media/magnolia/WhatsApp Image 2024-07-14 at 12.38.39.jpeg">
+                                            <img src="assets/media/magnolia/photo3.jpeg">
                                         </li>
                                         
                                         <li class="glide__slide">
-                                            <img src="assets/media/magnolia/WhatsApp Image 2024-07-14 at 12.38.40 (1).jpeg">
+                                            <img src="assets/media/magnolia/photo4.jpeg">
                                         </li>
                                         <li class="glide__slide">
-                                            <img src="assets/media/magnolia/photo2.png">
+                                            <img src="assets/media/magnolia/photo5.jpeg">
                                         </li>
                                         
                                     </ul>
@@ -159,16 +166,16 @@
                                     <div class="glide__track" data-glide-el="track">
                                     <ul class="glide__slides">
                                         <li class="glide__slide">
-                                            <img src="assets/media/jasmine/20230728_201105.jpg">
+                                            <img src="assets/media/jasmine/photo0.jpg">
                                         </li>
                                         <li class="glide__slide">
-                                            <img src="assets/media/jasmine/20230728_201023.jpg">
+                                            <img src="assets/media/jasmine/photo1.jpg">
                                         </li>
                                         <li class="glide__slide">
-                                            <img src="assets/media/jasmine/WhatsApp Image 2024-06-30 at 13.28.48.jpeg">
+                                            <img src="assets/media/jasmine/photo2.jpeg">
                                         </li>
                                         <li class="glide__slide">
-                                            <img src="assets/media/jasmine/photo0.jpeg">
+                                            <img src="assets/media/jasmine/photo3.jpeg">
                                         </li>
                                         
                                     </ul>
@@ -267,7 +274,80 @@
                     </div>
                 </div>
             </footer>
+            <div class="modal" id="modal-book">
+                <div class="self-modal-wrapper">
+                    <div class="modal-container">
+                        <div class="self-modal-header modal-row">
+                            <h3>Request for booking</h3>
+                            <div class="close-btn" id="modal-close-btn">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <form class="book-form" action="contact.php" method="POST">
+                            <label class="modal-row modal-form-row">
+                                <h5>Your email:</h5>
+                                <input type="text" name="email">
+                            </label>
+                            <div class="modal-container-sep">
+                                <span></span>
+                            </div>
+                            <label class="modal-row modal-form-row" id="dateInputLabel">
+                                <h5>Choose your dates</h5>
+                                <input name="dates" class="datepicker" id="datepicker" readonly>
+                                
+                            </label>
+                            <div class="modal-container-sep">
+                                <span></span>
+                            </div>
+                            <label class="modal-row modal-form-row">
+                                <h5>Your message:</h5>
+                                <textarea name="message"></textarea>
+                            </label>
+                            <!-- your other form fields go here -->
+                            <button class="modal-row" type="submit">Send</button>
+                        </form>
+                        
+                        <img src="assets/media/icons/daf2e37d2d40ec3dfd7120b33372bbbf.jpg">
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                function pickerCreate() {
+                    const picker = new easepick.create({
+                        element: document.getElementById('datepicker'),
+                        css: [
+                            'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.css',
+                            'https://cdn.jsdelivr.net/npm/@easepick/range-plugin@1.2.1/dist/index.css',
+                        ],
+                        zIndex: 10,
+                        plugins: [
+                            "RangePlugin"
+                        ], 
+                        setup(picker) {
+                            picker.on("select", (e) => {
+                                picker.destroy(); 
+                                isPickerCreated = false;
+                            })
+                        }
+                    });
+                }
+            
+                const dateInput = document.getElementById("datepicker");
+                let isPickerCreated = true;
+                pickerCreate();
+                dateInput.addEventListener("click", () => {
+                    if (!isPickerCreated) {
+                        isPickerCreated = true;
+                        pickerCreate();
+                    }
+                })
+            </script>
+            <script src="assets/js/logoload.js"></script>
+            <script src="assets/js/modals.js"></script>
             <script src="assets/js/animation.js"></script>
+            <script src="assets/js/send.js"></script>
             <script src="assets/js/sidebar.js"></script>
             <script src="assets/js/glide.js"></script>
             <script>
@@ -287,6 +367,8 @@
                 }).mount()
             </script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+            
         </body>
 
     </div>
