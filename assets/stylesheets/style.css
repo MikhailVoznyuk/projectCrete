@@ -231,7 +231,7 @@
     font-family: "Montserrat Alternates", serif;
     justify-content: center;
     text-align: center;
-    margin: -400px 0 50px 0;
+    margin: -100px 0 50px 0;
 }
 
 .text-article-under {
@@ -916,7 +916,14 @@
 
 }
 
+.calendar h2 {
+    font-size: 18px !important;
+}
 
+.calendar a {
+    color:#000 !important;
+    text-decoration: none !important;
+}
 
 @media (max-width: 991px) {
     .primary-header .logo  {
