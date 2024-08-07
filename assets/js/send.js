@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    console.log('aaa')
     const ajaxSend = async (formData) => {
         const response = await fetch("mail.php", {
             method: "POST",
@@ -7,20 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
         return await response.text();
     };
     if (document.querySelector(".book-form")) {
-        const forms = document.querySelectorAll(".book-form");
-        forms.forEach(form => {
-            form.addEventListener("submit", function(e) {
-                e.preventDefault();
-                const formData = new FormData(this);
+       
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
 
-                ajaxSend(formData)
-                    .then((response) => {
-                        alert("Success!");
-                        form.reset()
-                    })
-                    .catch((err) => alert("Bad"))
-            });
+            ajaxSend(formData)
+                .then((response) => {
+                    form.classList.add('hide');
+                    modalBackground.classList.add('hide');
+                    successSubmit.classList.add('show');
+                    form.reset()
+                })
+                .catch((err) => alert("Bad"))
         });
+        
     }
 });
 

@@ -225,12 +225,13 @@
 }
 
 .text-article {
+    position: relative;
     display: flex; 
     flex-direction: column;
     font-family: "Montserrat Alternates", serif;
     justify-content: center;
     text-align: center;
-    margin: 0 0 50px 0;
+    margin: -400px 0 50px 0;
 }
 
 .text-article-under {
@@ -327,6 +328,33 @@
     margin-top: 20px;
 }
 
+#success-submit {
+    display: none;
+    position: relative;
+    top: 0;
+    z-index: 100;
+    
+}
+
+#success-submit video {
+    height: 30vh;
+    clip-path: inset(2px 2px);
+    margin-bottom: 30px;
+}
+
+#success-submit h3 {
+    font-family: "Montserrat Alternates", sans-serif;
+    width: 50%;
+    text-align: center;
+}
+
+#success-submit.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 /* Изоображения */
 
 .loc-image {
@@ -361,6 +389,7 @@
 }
 
 .modal-container img {
+    display: block;
     position: absolute;
     height: 80%;;
     right: 0;
@@ -368,6 +397,10 @@
     margin-right: 5%;
     z-index: 5;
     opacity: 0.2;
+}
+
+.modal-container img.hide {
+    display: none;
 }
 
 
@@ -618,7 +651,7 @@
     margin-bottom: 50px;
 }
 
-.book-btn a {
+.book-btn span {
     position: relative;
     display: flex;
     justify-content: center;
@@ -654,7 +687,7 @@
     color: #696969;
 }
 
-.book-btn:hover a {
+.book-btn:hover span {
     color: #696969;
 }
 
@@ -666,6 +699,12 @@
     flex-direction: column;
     z-index: 6;
 }
+
+.modal-container form.hide {
+    display: none;
+}
+
+
 
 .modal-container .datepicker {
     max-width: 200px;
@@ -965,6 +1004,10 @@
     #gallery-main  .header-image {
         width: 100%;
     }
+
+    #success-submit h3 {
+        width: 70%;
+    }
 }
 
 @media (max-width: 407px) {
@@ -988,6 +1031,15 @@
 
     .loc-map  img {
        width: 100%;
+    }
+
+    #success-submit video {
+        margin-bottom: 10px;
+    }
+
+    #success-submit h3 {
+        width: 90%;
+        font-size: 22px;
     }
 }
 

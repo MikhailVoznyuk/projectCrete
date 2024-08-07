@@ -174,9 +174,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="button-section">
-                                <div class="book-btn">
+                                <div class="book-btn" id="modal-button-book">
                                     <div class="wrapper"></div>
-                                    <a href="object1.html">BOOK NOW</a>
+                                    <span>BOOK NOW</span>
                                 </div>
                             </div>
                             
@@ -332,6 +332,51 @@
                     </div>
                 </div>
             </footer>
+            <div class="modal" id="modal-book">
+                <div class="self-modal-wrapper">
+                    <div class="modal-container">
+                        <div class="self-modal-header modal-row">
+                            <h3>Request for booking</h3>
+                            <div class="close-btn" id="modal-close-btn">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <form class="book-form" action="contact.php" method="POST">
+                            <label class="modal-row modal-form-row">
+                                <h5>Your email:</h5>
+                                <input type="text" name="email">
+                            </label>
+                            <div class="modal-container-sep">
+                                <span></span>
+                            </div>
+                            <label class="modal-row modal-form-row" id="dateInputLabel">
+                                <h5>Choose your dates</h5>
+                                <input name="dates" class="datepicker" id="datepicker" readonly>
+                                
+                            </label>
+                            <div class="modal-container-sep">
+                                <span></span>
+                            </div>
+                            <label class="modal-row modal-form-row">
+                                <h5>Your message:</h5>
+                                <textarea name="message"></textarea>
+                            </label>
+                            <!-- your other form fields go here -->
+                            <button class="modal-row" type="submit">Send</button>
+                        </form>
+                        <div id="success-submit">
+                            <video autoplay muted loop playsinline>
+                                
+                                <source src="assets/media/success_final.webm">
+                            </video>
+                            <h3>Your request has been sent. We will reply to you as soon as possible. Thank you so much for your interest in us!</h3>
+                        </div>
+                        
+                        <img src="assets/media/icons/daf2e37d2d40ec3dfd7120b33372bbbf.jpg">
+                    </div>
+                </div>
+            </div>
             <script type="module">
                 import PhotoSwipeLightbox from '/assets/plugins/photoswipe/photoswipe-lightbox.esm.js';
                 const lightboxMain = new PhotoSwipeLightbox({
@@ -344,6 +389,7 @@
             </script>
             <script src="assets/js/logoload.js"></script>
             <script src="assets/js/modals.js"></script>
+            <script src="assets/js/send.js"></script>
             <script src="assets/js/calendar.js"></script>
             <script src="assets/js/animation.js"></script>
             <script src="assets/js/sidebar.js"></script>
