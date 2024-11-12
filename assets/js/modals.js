@@ -4,14 +4,16 @@ let modalCloseBtn = document.querySelector('#modal-close-btn');
 let form = document.querySelector('#modal-book form');
 let successSubmit = document.querySelector('#success-submit');
 let modalBackground = document.querySelector('#modal-book img');
+let bodyWrapper = document.querySelector('.body-wrapper');
+let pageHeader = document.querySelector('header')
 
 modalButton.addEventListener("click", function modalManager() {
     modalWindow.classList.toggle('modal-show');
-    body.classList.toggle('modal-opened');
+    bodyWrapper.classList.toggle('modal-opened');
     form.classList.remove('hide');
     modalBackground.classList.remove('hide');
     successSubmit.classList.remove('show');
-    if (body.classList.contains('modal-opened')) {
+    if (bodyWrapper.classList.contains('modal-opened')) {
         modalCloseBtn.addEventListener('click', modalManager);
     } else {   
         modalCloseBtn.removeEventListener('click', modalManager);

@@ -1,58 +1,25 @@
-@keyframes slidein {
-    from {
-      left: 150vw;
-    }
-  
-    to {
-      left: 0;
-    }
-  }
 
-@keyframes slideout {
-    from {
-        left: 0;
-        opacity: 1;
-        display: block;
-        
-    }
-  
-    to {
-        left: 150vw;
-        opacity: 1;
-        display: block;
-
-    }
-  }
-
-@keyframes blackout {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-  
 
 
 
 .side-bar .modal-wrapper {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
    
 }
 
 .side-bar {
-    display: none;
-    position: absolute;
+   
+    position: fixed;
+    left: 150vw;
     opacity: 0;
     z-index: 9; 
+    transition: ease-in-out 0.5s
 }
 
 .side-bar .modal-window {
-    position: absolute;
+    position: fixed;
     background-color: #fff;
     width: 100vw;
     height: 100vh;
@@ -60,8 +27,10 @@
 
 
 .side-bar.show {
-    display: block;
+
+    left: 0;
     opacity: 1;
+    transition:  ease-in-out 0.5s;
 }
 
 

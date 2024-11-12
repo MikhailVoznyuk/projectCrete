@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log('aaa')
     const ajaxSend = async (formData) => {
         const response = await fetch("mail.php", {
             method: "POST",
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     successSubmit.classList.add('show');
                     form.reset()
                 })
-                .catch((err) => alert("Bad"))
         });
         
     }

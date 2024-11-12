@@ -1,8 +1,13 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar-magnolia');
     var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
-    events: makeAllEventsMagnolia(),
+    events: {
+        url: 'https://www.airbnb.ru/calendar/ical/1181781053173749823.ics?s=6383e0c78987277d8373d53a432845f7',
+        format: 'ics'
+    },
     });
     
     calendar.render();
